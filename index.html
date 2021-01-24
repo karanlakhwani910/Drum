@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div id="A" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div id="S" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div id="D" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div id="F" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div id="G" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div id="H" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div id="J" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div id="K" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div id="L" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+
+<script>
+  document.addEventListener("keydown", function(event){
+    var key = event.key;
+    switch (key){
+      case 'a':
+        var audio = new Audio("sounds/clap.wav");
+        audio.play();
+        addAnimation(key);
+        break;
+      case 's':
+        var audio = new Audio("sounds/hihat.wav");
+        audio.play();
+        addAnimation(key);
+        break;
+      case 'd':
+        var audio = new Audio("sounds/kick.wav");
+        audio.play();
+        addAnimation(key);
+        break;
+      case 'f':
+        var audio = new Audio("sounds/openhat.wav");
+        audio.play();
+        addAnimation(key);
+        break;
+      case 'g':
+        var audio = new Audio("sounds/boom.wav");
+        audio.play();
+        addAnimation(key);
+        break;
+      case 'h':
+        var audio = new Audio("sounds/ride.wav");
+        audio.play();
+        addAnimation(key);
+        break;
+      case 'j':
+        var audio = new Audio("sounds/snare.wav");
+        audio.play();
+        addAnimation(key);
+        break;
+      case 'k':
+        var audio = new Audio("sounds/tom.wav");
+        audio.play();
+        addAnimation(key);
+        break;
+      case 'l':
+        var audio = new Audio("sounds/tink.wav");
+        audio.play();
+        addAnimation(key);
+        break;
+    }
+    
+  });
+
+function addAnimation(key){
+  var k = key.toUpperCase();
+  var ele = document.getElementById(k);
+  ele.classList.add("playing");
+  setTimeout(function(){
+    ele.classList.remove("playing");
+  }, 200);
+}
+
+</script>
+
+
+</body>
+</html>
